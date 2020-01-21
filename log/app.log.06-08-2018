@@ -1,0 +1,11 @@
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-06T21:06:44.188Z"}
+{"level":"info","message":"\u001b[0mGET /api/auth/me \u001b[33m403 \u001b[0m5.313 ms - 45\u001b[0m\n","timestamp":"2018-08-06T21:22:57.782Z"}
+{"level":"info","message":"\u001b[0mGET /api/auth \u001b[33m404 \u001b[0m2.229 ms - 147\u001b[0m\n","timestamp":"2018-08-06T21:23:03.684Z"}
+{"level":"info","message":"\u001b[0mPOST /api/auth/register \u001b[32m200 \u001b[0m415.195 ms - 195\u001b[0m\n","timestamp":"2018-08-06T21:27:42.879Z"}
+{"level":"info","message":"\u001b[0mGET /api/auth/me \u001b[33m403 \u001b[0m1.272 ms - 45\u001b[0m\n","timestamp":"2018-08-06T21:29:03.931Z"}
+{"level":"info","message":"\u001b[0mGET /api/auth/me \u001b[32m200 \u001b[0m388.883 ms - 91\u001b[0m\n","timestamp":"2018-08-06T21:29:59.970Z"}
+{"level":"info","message":"\u001b[0mPOST /api/auth/login \u001b[32m200 \u001b[0m359.307 ms - 195\u001b[0m\n","timestamp":"2018-08-06T21:31:55.687Z"}
+{"level":"info","message":"\u001b[0mPOST /api/auth/login \u001b[32m200 \u001b[0m363.106 ms - 195\u001b[0m\n","timestamp":"2018-08-06T21:32:27.148Z"}
+{"level":"info","message":"\u001b[0mPOST /api/auth/login \u001b[32m200 \u001b[0m364.704 ms - 195\u001b[0m\n","timestamp":"2018-08-06T21:32:30.465Z"}
+{"level":"info","message":"\u001b[0mPOST /api/auth/login \u001b[32m200 \u001b[0m364.400 ms - 195\u001b[0m\n","timestamp":"2018-08-06T21:32:32.814Z"}
+{"level":"info","message":"\u001b[0mPOST /api/auth/login \u001b[32m200 \u001b[0m359.907 ms - 195\u001b[0m\n","timestamp":"2018-08-06T21:32:35.218Z"}

@@ -1,0 +1,24 @@
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T19:17:52.883Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T19:53:48.432Z"}
+{"level":"info","message":"\u001b[0mGET /api/auth/login \u001b[33m404 \u001b[0m4.299 ms - 153\u001b[0m\n","timestamp":"2018-08-07T19:54:17.053Z"}
+{"level":"info","message":"\u001b[0mGET /robots.txt \u001b[33m404 \u001b[0m0.513 ms - 149\u001b[0m\n","timestamp":"2018-08-07T19:54:17.058Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m404 \u001b[0m0.271 ms - 150\u001b[0m\n","timestamp":"2018-08-07T19:54:17.313Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T19:55:11.756Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:01:22.102Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:02:54.674Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:44:00.621Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:45:21.697Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:50:19.475Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:55:01.647Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:55:52.907Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:56:48.365Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T20:58:45.569Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:01:09.937Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:03:05.918Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:04:04.163Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:06:02.001Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:07:07.436Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:18:25.893Z"}
+{"level":"info","message":"Conectado a mongoDB!","timestamp":"2018-08-07T21:18:27.684Z"}
+{"level":"info","message":"Servidor corriendo -  3000","timestamp":"2018-08-07T21:19:10.085Z"}
+{"level":"info","message":"Conectado a mongoDB!","timestamp":"2018-08-07T21:19:11.402Z"}

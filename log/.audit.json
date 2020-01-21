@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 25
+    },
+    "auditLog": "C:\\Users\\fmendoza\\Documents\\proyectos\\m-server\\log/.audit.json",
+    "files": [
+        {
+            "date": 1533669289809,
+            "name": "C:\\Users\\fmendoza\\Documents\\proyectos\\m-server\\log\\app.log..Tu-08-yyyy",
+            "hash": "10b46d30e81a59f1287e51cf0a0531f3"
+        }
+    ]
+}
