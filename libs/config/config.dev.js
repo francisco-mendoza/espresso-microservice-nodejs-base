@@ -11,7 +11,7 @@ config.serverPort = process.env.serverPort || 3000;
 
 //datos momentaneos
 config.secret = 'supersecret';
-config.database_url_dev = 'mongodb://shopmusic:Propro123@framesoft.cl:27017/shopmusic_db';
+config.database_url_dev = 'mongodb://shopmusic:'+process.env.dbPass+'@'+process.env.dbHost+':'+process.env.dbPort+'/'+process.env.dbName+'';
 
 
 module.exports = config;

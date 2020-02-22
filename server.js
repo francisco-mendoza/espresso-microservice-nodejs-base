@@ -11,8 +11,10 @@ const multipart = require('connect-multiparty');
 
 const app = express();
 
+//Descomentar para usar Base de datos Mongodb
 //connectToDb();
 
+require('dotenv').config()
 const port = config.serverPort;
 
 logger.stream = {
@@ -130,5 +132,7 @@ app.get('/usuarios', (req, res) => {
 
 app.listen(port, function() {
     logger.info('Servidor corriendo - ', port);
+
+    logger.info('Holaaaa. ', process.env.SALUDOS);
 });
 
