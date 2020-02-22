@@ -6,8 +6,10 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var User = require('../models/User');
 
+const controller = {};
+
 // CREATES A NEW USER
-router.post('/', function (req, res) {
+controller.addUser('/', function (req, res) {
     User.create({
             name : req.body.name,
             email : req.body.email,
@@ -20,7 +22,7 @@ router.post('/', function (req, res) {
 });
 
 // RETURNS ALL THE USERS IN THE DATABASE
-router.get('/', function (req, res) {
+controller.getUsers('/', function (req, res) {
     User.find({}, function (err, users) {
         if (err) return res.status(500).send("There was a problem finding the users.");
         res.status(200).send(users);
@@ -28,7 +30,7 @@ router.get('/', function (req, res) {
 });
 
 // GETS A SINGLE USER FROM THE DATABASE
-router.get('/:id', function (req, res) {
+controller.getUserById('/:id', function (req, res) {
     User.findById(req.params.id, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the user.");
         if (!user) return res.status(404).send("No user found.");
@@ -37,7 +39,7 @@ router.get('/:id', function (req, res) {
 });
 
 // DELETES A USER FROM THE DATABASE
-router.delete('/:id', function (req, res) {
+controller.deleteUserById('/:id', function (req, res) {
     User.findByIdAndRemove(req.params.id, function (err, user) {
         if (err) return res.status(500).send("There was a problem deleting the user.");
         res.status(200).send("User: "+ user.name +" was deleted.");
@@ -45,7 +47,7 @@ router.delete('/:id', function (req, res) {
 });
 
 // UPDATES A SINGLE USER IN THE DATABASE
-router.put('/:id', function (req, res) {
+controller.putUserById('/:id', function (req, res) {
     User.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, user) {
         if (err) return res.status(500).send("There was a problem updating the user.");
         res.status(200).send(user);
@@ -53,4 +55,4 @@ router.put('/:id', function (req, res) {
 });
 
 
-module.exports = router;
+module.exports = controller;
