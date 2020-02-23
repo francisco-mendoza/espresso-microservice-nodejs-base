@@ -9,50 +9,64 @@ var User = require('../models/User');
 const controller = {};
 
 // CREATES A NEW USER
-controller.addUser('/', function (req, res) {
-    User.create({
-            name : req.body.name,
-            email : req.body.email,
-            password : req.body.password
-        }, 
-        function (err, user) {
-            if (err) return res.status(500).send("There was a problem adding the information to the database.");
-            res.status(200).send(user);
-        });
-});
+controller.addUser = async (req, res) => {
+    let user = User({
+        name : req.body.name,
+        email : req.body.email,
+        password : req.body.password
+    });
+
+    try {
+        const savedUser = await User.addUser(user);
+        res.status(200).send(savedUser);
+    } catch (error) {
+        logger.error('Error - ' + err);
+        res.status(500).send("Error save user");
+    }
+}
 
 // RETURNS ALL THE USERS IN THE DATABASE
-controller.getUsers('/', function (req, res) {
-    User.find({}, function (err, users) {
-        if (err) return res.status(500).send("There was a problem finding the users.");
+controller.getUsers = async (req, res) => {
+    try {
+        const users = await User.getAll();
         res.status(200).send(users);
-    });
-});
+    } catch (error) {
+        logger.error('Error - ' + err);
+        res.status(500).send("Error get Users");
+    }
+}
 
 // GETS A SINGLE USER FROM THE DATABASE
-controller.getUserById('/:id', function (req, res) {
-    User.findById(req.params.id, function (err, user) {
-        if (err) return res.status(500).send("There was a problem finding the user.");
+controller.getUserById = async (req, res) => {
+    try {
+        const user = await User.detailUser(req.params.id);
         if (!user) return res.status(404).send("No user found.");
         res.status(200).send(user);
-    });
-});
+    } catch (error) {
+        logger.error('Error - ' + err);
+        res.status(500).send("Error update user");
+    }   
+}
 
 // DELETES A USER FROM THE DATABASE
-controller.deleteUserById('/:id', function (req, res) {
-    User.findByIdAndRemove(req.params.id, function (err, user) {
-        if (err) return res.status(500).send("There was a problem deleting the user.");
-        res.status(200).send("User: "+ user.name +" was deleted.");
-    });
-});
+controller.deleteUserById = async (req, res) => {
+    try {
+        await User.removeUser(req.params.id);
+        res.status(200).send("Deleted user successfully");
+    } catch (error) {
+        logger.error('Error - ', error);
+        res.status(500).send("Error delete user");
+    }
+}
 
 // UPDATES A SINGLE USER IN THE DATABASE
-controller.putUserById('/:id', function (req, res) {
-    User.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, user) {
-        if (err) return res.status(500).send("There was a problem updating the user.");
-        res.status(200).send(user);
-    });
-});
-
+controller.putUserById = async (req, res) => {
+    try {
+        User.updateUser(req.params.id, req.body);
+        res.status(200).send("Updated user successfully");
+    } catch (error) {
+        res.status(500).send("Error update user");
+    }
+}
 
 module.exports = controller;
