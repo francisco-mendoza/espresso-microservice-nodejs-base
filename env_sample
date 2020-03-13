@@ -1,0 +1,7 @@
+# MONGODB
+dbHost='localhost'
+dbPort='27017'
+dbName='testdb'
+dbPass='testdb'
+
+serverPort=3000
