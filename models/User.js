@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-const connectToDb = require('./libs/db/connect');
+const connectToDb = require('../libs/db/connect');
 
 var UserSchema = new mongoose.Schema({  
   name:      { type: String },
@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
 
 let UserModel = mongoose.model('User', UserSchema);
 
-connectToDb();
+//connectToDb();
 
 UserModel.getAll = () => {
   return UserModel.find({});
