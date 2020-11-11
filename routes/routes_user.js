@@ -1,28 +1,26 @@
-const express = require('express');
+const express        = require('express');
 const userController = require('../controllers/UserController');
-const logger = require('../libs/logger/app-logger');
-
-const router = express.Router();
+const router         = express.Router();
 
 /** User Routes */
 router.post('/users', (req, res) => {
-    userController.addUser(req, res);
+	userController.addUser(req, res);
 });
 
 router.get('/users', (req, res) => {
-    userController.getUsers(req, res, next);
+	userController.getUsers(req, res, next);
 });
 
 router.post('/users/:id', (req, res) => {
-    userController.getUserById(req, res);
+	userController.getUserById(req, res);
 });
 
 router.delete('/users/:id', (req, res) => {
-    userController.deleteUserById(req, res);
+	userController.deleteUserById(req, res);
 });
 
 router.put('/users/:id', (req, res) => {
-    userController.deleteUserById(req, res);
+	userController.deleteUserById(req, res);
 });
 
 module.exports = router;    

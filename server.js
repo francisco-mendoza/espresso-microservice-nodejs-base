@@ -1,24 +1,31 @@
-const express = require('express');
-const logger = require('./libs/logger/app-logger');
-const config = require('./libs/config/config.dev');
-const cors = require('cors');
-const router_api = require('./routes/routes_api');
+const express     = require('express');
+const config      = require('./libs/config/config.dev');
+const cors        = require('cors');
+const router_api  = require('./routes/routes_api');
 const router_user = require('./routes/routes_user');
-
-const app = express();
-
-//Descomentar para usar Base de datos Mongodb
-//connectToDb();
-
+const app         = express();
+const port        = config.serverPort;
 require('dotenv').config()
-const port = config.serverPort;
-
-logger.stream = {
-  write(message, encoding) {
-    logger.info(message);
-  },
-};
-
+//Configurar cors de acuerdo a requerimientos.
+async function main() {
+  try {
+    await app.listen(port);
+    //let mongoDB = await connectMongoDB();
+    let serverInfo = {
+      "SERVICE": process.env.APP_NAME,
+      "STATUS": "ok",
+      "MSG" : "Server Init",
+      "PORT" : process.env.PORT || 3000,
+      "VERSION": process.env.VERSION_APP,
+      "BASE_URL" : `localhost:${process.env.PORT}/${process.env.APP_PATH_SERVICE}/`,
+      //"MONGODB": mongoDB.message
+    }
+    console.table(serverInfo);
+  } catch (error) {
+    console.log(error)
+    throw new Error("Internal Server Error");
+  }
+}
 
 app.use(cors());
 
@@ -28,12 +35,10 @@ app.use('/api', router_user);
 
 //Index route
 app.get('/', (req, res) => {
-    res.status(200).send({
-        response:"Hello Espresso!"
-    });
+  res.status(200).send({
+    response:"Hello Espresso!"
+  });
 });
 
-app.listen(port, function() {
-    logger.info('Servidor corriendo - ', port);
-});
+main();
 

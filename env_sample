@@ -5,3 +5,8 @@ dbName='testdb'
 dbPass='testdb'
 
 serverPort=3000
+
+APP_NAME=espresso
+PORT=3000
+VERSION_APP=2.1
+APP_PATH_SERVICE=api
