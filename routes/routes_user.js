@@ -23,4 +23,7 @@ router.put('/users/:id', (req, res) => {
 	userController.deleteUserById(req, res);
 });
 
-module.exports = router;    
+router.get('/getTestSql', (req, res) => {
+	userController.getTestSql(req, res, next);
+});
+module.exports = router;

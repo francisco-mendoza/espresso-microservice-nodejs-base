@@ -7,7 +7,7 @@ Plantilla Microservicio NodeJS con Express y conección a MongoDB con CRUD Bási
 ## Como usar
 ```
 $ npm install 
-$ node server.js
+$ npm start
 ```
 
 ## Variables

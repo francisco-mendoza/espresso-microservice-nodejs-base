@@ -2,6 +2,8 @@ const express    = require('express');
 const router     = express.Router();
 const bodyParser = require('body-parser');
 
+const { Sequelize, QueryTypes } = require('sequelize');
+
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 const User = require('../models/User');
@@ -67,6 +69,27 @@ controller.putUserById = async (req, res) => {
 	} catch (error) {
 		res.status(500).send("Error update user");
 	}
+}
+
+consoller.getTestSql = async (req, res) => {
+	const sequelize = new Sequelize("BPGC_POR_PUB", "Fabrica01", "Kibernum", {
+    host: "191.234.174.16",
+      port: "1433", 
+      dialect: "mssql",
+      operatorsAliases: false,
+      pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+      }
+    });
+
+    //let consulta = await sequelize.query("SELECT * FROM TPPP_ALE", { type: QueryTypes.SELECT });
+    let consulta = await sequelize.query("EXEC spr_prg_frc_hab", { type: QueryTypes.SELECT });
+    res.status(200).send({
+      data: consulta
+    })
 }
 
 module.exports = controller;
